@@ -1,0 +1,20 @@
+{% extends 'AppCoder/padre.html' %}
+{% load static %}
+        {% block contenido1 %}
+            <h1>Formulario de Jugador</h1>
+        {% endblock %}
+
+        {% block contenido %}
+
+            {% if miFormulario.errors %}
+            
+            <p>ERROR!</p>
+
+            {% enfif %}
+            <form action="/AppCoder/jugadorFormulario" method="POST">{% csrf_token %}
+                <table>
+                    {{miFormulario.as_table}}
+                </table>
+                <input type="submit" value=envioo>
+            </form>
+        {% endblock %}
